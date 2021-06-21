@@ -9,15 +9,9 @@ import os
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
-# environment settings
-# Do not show unnecessary warning messages
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-# USE FULL POWER OF GPU
-os.environ["TF_FORCE_GPU_ALLOW_GROWTH"] = "true"
-
 ### Load Names Data
 
-with open("data/names.txt") as f:
+with open("data/names.txt", encoding="utf-8") as f:
     names = f.readlines()
 
 ### Get info from Names Data
