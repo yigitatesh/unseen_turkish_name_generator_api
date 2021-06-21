@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Unseen Turkish Name Generator</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+  <style>
+  p		{text-align: center}
+  body 	{text-align: center}
+  </style>
+</head>
+
+<body>
+
+ <div class="login">
+	<br>
+	<h1>Generate Artificial Turkish Names</h1>
+	
+	<!-- General info -->
+	<p>Welcome to the <b>Turkish Name Generator</b>!<br>
+	These generated names will NOT be REAL NAMES!</p><br>
+
+    <!-- Input values initial seed and number of names -->
+    <form action="{{ url_for('predict') }}"method="post">
+		<p>Type the initial characters of name(s) to be generated.<br>
+		(You can leave it empty)</p>
+    	<input type="text" name="seed" placeholder="initial characters" />
+		
+		<p>Type number of Turkish name(s) to be generated.<br>
+		(You can leave it empty to generate 1 name)</p>
+        <input type="text" name="num_names" placeholder="number of names" /><br><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Generate</button>
+    </form>
+
+    <br>
+	
+	<!-- Showing Generation Results -->
+    <br>
+	{% if generated_names %}
+		<b>Generated Turkish Names:</b> <br>
+		{% for name in generated_names %}
+			{{ name }}<br>
+		{% endfor %}
+	{% endif %}
+	
+	<!-- Showing Errors -->
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		{% for message in messages %}
+		  <br>
+		  {{ message }}
+		{% endfor %}
+	  {% endif %}
+	{% endwith %}
+ </div>
+
+</body>
+</html>
