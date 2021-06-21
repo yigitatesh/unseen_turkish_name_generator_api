@@ -11,8 +11,8 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 ### Load Names Data
 
-with open("data/names.txt", encoding=None) as f:
-    names = f.readlines()
+with open("data/names_utf_8", "rb") as f:
+    names = [name.decode("utf-8") for name in f.readlines()]
 
 ### Get info from Names Data
 
