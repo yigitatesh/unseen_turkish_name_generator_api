@@ -26,7 +26,7 @@
 	These generated names will NOT be REAL NAMES!</p><br>
 
     <!-- Input values initial seed and number of names -->
-    <form action="{{ url_for('predict') }}"method="post">
+    <form action="{{ url_for('predict') }}" method="post" autocomplete="off">
 		<p>Type the initial characters of name(s) to be generated.<br>
 		(You can leave it empty)</p>
     	<input type="text" name="seed" placeholder="initial characters" />
