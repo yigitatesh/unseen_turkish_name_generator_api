@@ -58,7 +58,7 @@ inference_model = load_model("model/tr_name_generate_inference_model_3.h5")
 
 ## Helper Functions
 
-def generate_name(seed):
+def generate_name(seed=""):
     """Generate chars given a seed (it can be empty)
     
     In a loop, predicts next chars and appends them to seed
@@ -101,10 +101,10 @@ def generate_name(seed):
         seed = pred_char
         output += pred_char
         
-        if pred_char == ">" or len(output) > 20:
+        if pred_char == ">" or len(output) > max_len + 2:
             break
     
-    return output[1:-1] # get rid of start(<) and end(>) chars
+    return output.lstrip("<").rstrip(">") # get rid of start(<) and end(>) chars
 
 def is_real_name(name):
     """checks whether created name is in names dataset or not"""
@@ -175,16 +175,16 @@ def predict():
     are_inputs_valid = True
 
     # process inital characters
-    seed = features[0]
+    seed = tr_upper_to_lower(features[0].strip())
+
     if not is_seed_valid(seed):
         flash("Please type alphabetical character(s) as initial characters of names.")
         are_inputs_valid = False
-    else:
-        seed = tr_upper_to_lower(seed)
 
     # process number of names
-    num_names = features[1]
-    if num_names.strip() == "":
+    num_names = features[1].strip()
+
+    if num_names == "":
         num_names = 1
     else:
         try:
