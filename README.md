@@ -6,7 +6,6 @@ You can type initial characters for your artificial names and generate names whi
 Go to [app link](https://unseen-turkish-name-generator.herokuapp.com/) to see this app.
 
 ## Examples
-### 1
 5 names generated with initial characters "al": <br>
 * altekin
 * alulay
