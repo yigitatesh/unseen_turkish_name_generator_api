@@ -10,7 +10,7 @@ A random probability distribution is added to name generation phase so that it c
 ## Usage
 Go to [app link](https://unseen-turkish-name-generator.herokuapp.com/) to open this app. <br>
 
-1. Type initial characters for name to be generated. (You can leave it empty to not indicate any initial character)
+1. Type initial characters for name(s) to be generated. (You can leave it empty to not indicate any initial character)
 2. Type number of names to be generated. (You can leave it empty to generate just 1 name)
 3. Click to "Generate" button.
 
