@@ -21,3 +21,10 @@ Go to [app link](https://unseen-turkish-name-generator.herokuapp.com/) to open t
 * alpgün
 * altınkılı
 * alşi
+
+5 names generated without indicating any initial character: <br>
+* sebül
+* abhirhan
+* tokbay
+* helem
+* algana
