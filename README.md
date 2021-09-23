@@ -1,7 +1,9 @@
 # Unseen Turkish Name Generator
 Artificial Turkish Name Generator <br>
 
-You can type initial characters for your artificial names and generate names which do not exist in real life.<br>
+You can type initial characters for your artificial names and generate names which do not exist in real life. <br>
+
+It will generate different names each time. <br>
 
 Go to [app link](https://unseen-turkish-name-generator.herokuapp.com/) to see this app.
 
